@@ -59,6 +59,7 @@ namespace ClubFund.Services
 			return await _ctx.Members
 				.ToListAsync();
 
+
 		}
 	}
 }
