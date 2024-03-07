@@ -1,0 +1,28 @@
+﻿USE master 
+GO
+
+CREATE DATABASE ClubFund
+GO
+
+USE ClubFund
+GO
+
+
+CREATE TABLE Member(
+Id INT IDENTITY(1,1) Primary Key,
+FirstName nvarchar(30),
+LastName nvarchar(30),
+[Image] varbinary(max) null,
+IsActive bit
+)
+GO
+
+CREATE TABLE Payment(
+Id INT IDENTITY(1,1) Primary Key,
+IsIncoming BIT,
+Amount DECIMAL(10,2),
+DateOfPayment DATE,
+[Description] VARCHAR(500),
+MemberId INT FOREIGN KEY REFERENCES Member
+
+)
